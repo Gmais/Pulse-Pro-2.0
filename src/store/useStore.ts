@@ -829,7 +829,6 @@ export const useStore = create<PulseStore>()(
         zones: state.zones,
         turmas: state.turmas,
         professors: state.professors,
-        classHistory: state.classHistory,
         challenges: state.challenges,
         sensors: state.sensors,
         currentTenant: state.currentTenant,
