@@ -412,7 +412,8 @@ export async function fetchClassSessions(tenantId: string): Promise<ClassSession
     .from("class_sessions")
     .select("*")
     .eq("tenant_id", tenantId)
-    .order("date", { ascending: true });
+    .order("date", { ascending: false })
+    .limit(90);
   if (sessErr) throw sessErr;
 
   const { data: participants, error: partErr } = await supabase
@@ -437,7 +438,7 @@ export async function fetchClassSessions(tenantId: string): Promise<ClassSession
     partMap.set(p.session_id, list);
   });
 
-  return ((sessions || []) as any[]).map((s) => ({
+  return ((sessions || []) as any[]).reverse().map((s) => ({
     id: s.id,
     tenantId: s.tenant_id,
     date: s.date,
@@ -598,9 +599,7 @@ export async function deleteChallengeDb(id: string) {
 // ─── Bulk student update (for finishClass) ─────────────────
 
 export async function bulkUpdateStudents(updates: { id: string; data: Partial<Student> }[]) {
-  for (const u of updates) {
-    await updateStudentDb(u.id, u.data);
-  }
+  await Promise.all(updates.map((u) => updateStudentDb(u.id, u.data)));
 }
 
 // ─── Sensors ───────────────────────────────────────────────
