@@ -1,0 +1,103 @@
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║       PONTE ANT+ PARA PULSE TRIBE PRO                    ║
+║       Tutorial de Instalação                             ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════
+  O QUE É ISSO?
+═══════════════════════════════════════════════════════════
+
+  Esta ponte conecta seus sensores ANT+ (monitores
+  cardíacos) ao Pulse Tribe Pro que roda no navegador
+  pelo link do Lovable.
+
+  Sem esta ponte, o ANT+ não funciona pela web.
+  Ela roda em segundo plano no computador.
+
+
+═══════════════════════════════════════════════════════════
+  O QUE VOCÊ VAI PRECISAR
+═══════════════════════════════════════════════════════════
+
+  ✓ Computador com Windows 10 ou 11
+  ✓ Dongle ANT+ USB (ex: Garmin, Suunto, Dynastream)
+  ✓ Conexão com internet (só na primeira vez)
+  ✓ O link do Pulse Tribe Pro (Lovable)
+
+  Conteúdo desta pasta:
+  ├── instalar-ant.bat   ← Rode PRIMEIRO
+  ├── iniciar-ant.bat    ← Use para ligar a ponte
+  ├── ant-bridge/        ← Programa da ponte
+  └── TUTORIAL-ANT.txt   ← Este arquivo
+
+
+═══════════════════════════════════════════════════════════
+  PASSO A PASSO
+═══════════════════════════════════════════════════════════
+
+  PASSO 1 - Copiar a pasta
+  ─────────────────────────
+  Copie TODA esta pasta para o computador.
+  Sugestão: coloque em C:\PonteANT ou na 
+  Área de Trabalho.
+
+
+  PASSO 2 - Instalar o Node.js
+  ─────────────────────────────
+  Se o computador NÃO tem o Node.js:
+
+  a) Acesse: https://nodejs.org
+  b) Clique no botão verde "LTS"
+  c) Execute o instalador
+  d) Reinicie o computador após instalar
+
+  Se já tem Node.js, pule para o Passo 3.
+
+
+  PASSO 3 - Rodar o instalador
+  ─────────────────────────────
+  a) Plugue o dongle ANT+ USB no computador
+  b) Dê DUPLO-CLIQUE em "instalar-ant.bat"
+  c) Se aparecer "Windows protegeu seu PC":
+     → Clique em "Mais informações"
+     → Clique em "Executar assim mesmo"
+  d) Aguarde terminar
+  e) Um atalho será criado na Área de Trabalho!
+
+
+  PASSO 4 - Usar no dia a dia
+  ────────────────────────────
+  Toda vez que quiser usar o ANT+:
+
+  1. Plugue o dongle ANT+ USB
+  2. Clique no atalho "Ponte ANT+" na Área
+     de Trabalho (ou "iniciar-ant.bat")
+  3. Deixe a janela preta aberta
+  4. Abra o Pulse Tribe Pro no navegador
+  5. Vá na página Monitor
+  6. Clique em "Conectar ANT+"
+  7. Os sensores vão aparecer automaticamente!
+
+  Para PARAR: feche a janela preta da ponte.
+
+
+═══════════════════════════════════════════════════════════
+  RESOLUÇÃO DE PROBLEMAS
+═══════════════════════════════════════════════════════════
+
+  Problema: "Node.js não encontrado"
+  Solução:  Instale o Node.js (Passo 2)
+
+  Problema: Sensores não aparecem
+  Solução:  Verifique se o dongle está plugado
+            ANTES de iniciar a ponte
+
+  Problema: "Porta em uso"
+  Solução:  Feche outras instâncias da ponte
+
+  Problema: O Windows bloqueou o script
+  Solução:  "Mais informações" → "Executar"
+
+═══════════════════════════════════════════════════════════

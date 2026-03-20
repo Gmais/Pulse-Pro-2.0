@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 25% 8%;
+    --foreground: 210 40% 96%;
+
+    --card: 225 20% 12%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 225 20% 12%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 14 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 225 15% 18%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 225 15% 16%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 14 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 225 15% 20%;
+    --input: 225 15% 20%;
+    --ring: 14 100% 55%;
+
+    --radius: 0.75rem;
+
+    /* Zone colors */
+    --zone-rest: 0 0% 30%;
+    --zone-warmup: 210 100% 55%;
+    --zone-burn-start: 45 100% 55%;
+    --zone-burn-full: 25 100% 55%;
+    --zone-performance: 0 85% 55%;
+
+    /* Glow effects */
+    --glow-primary: 0 0% 0% / 0;
+    --glow-zone: 0 0% 0% / 0;
+
+    /* Sidebar */
+    --sidebar-background: 225 25% 6%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 14 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 15% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 225 15% 18%;
+    --sidebar-ring: 14 100% 55%;
+
+    /* Chart */
+    --chart-1: 14 100% 55%;
+    --chart-2: 210 100% 55%;
+    --chart-3: 45 100% 55%;
+    --chart-4: 25 100% 55%;
+    --chart-5: 0 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .zone-rest {
+    background-color: hsl(var(--zone-rest));
+  }
+  .zone-warmup {
+    background-color: hsl(var(--zone-warmup));
+  }
+  .zone-burn-start {
+    background-color: hsl(var(--zone-burn-start));
+  }
+  .zone-burn-full {
+    background-color: hsl(var(--zone-burn-full));
+  }
+  .zone-performance {
+    background-color: hsl(var(--zone-performance));
+  }
+
+  .glow-card {
+    box-shadow: 0 0 20px -5px hsl(var(--glow-zone)), 0 8px 30px -10px hsl(0 0% 0% / 0.5);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px currentColor;
+  }
+
+  .projection-text {
+    @apply text-4xl font-bold font-display tracking-tight;
+  }
+}
+
+#lovable-badge {
+display: none !important;
+}
+
+/* ── Print / PDF styles ─────────────────────────────── */
+@media print {
+  /* Hide everything outside the report */
+  nav,
+  footer,
+  header,
+  .print\\:hidden,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: Inter, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Make the page full-width */
+  main,
+  [class*="max-w-"] {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Keep report card colours */
+  .bg-card {
+    background: #1a1e2e !important;
+    color: #e8eaf0 !important;
+    border-radius: 12px;
+  }
+
+  /* Make page break friendly */
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+}

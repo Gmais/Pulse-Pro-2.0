@@ -1,0 +1,114 @@
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║              PULSE TRIBE PRO - TUTORIAL                  ║
+║         Como instalar em outro computador                ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════
+  O QUE VOCÊ VAI PRECISAR
+═══════════════════════════════════════════════════════════
+
+  ✓ Um computador com Windows 10 ou 11
+  ✓ Conexão com a internet (só na primeira vez)
+  ✓ Dongle ANT+ USB (se for usar sensores ANT+)
+
+  Conteúdo desta pasta:
+  ├── instalar.bat      ← Rode este PRIMEIRO
+  ├── iniciar.bat       ← Use este para abrir o app
+  ├── dist/             ← O app compilado
+  ├── ant-bridge/       ← Ponte para sensores ANT+
+  └── .env              ← Configurações do servidor
+
+
+═══════════════════════════════════════════════════════════
+  PASSO A PASSO
+═══════════════════════════════════════════════════════════
+
+  PASSO 1 - Copiar a pasta
+  ─────────────────────────
+  Copie TODA esta pasta ("PulseTribePro-Instalador")
+  para o computador de destino.
+  Sugestão: coloque em C:\PulseTribePro ou na Área
+  de Trabalho.
+
+
+  PASSO 2 - Instalar o Node.js
+  ─────────────────────────────
+  Se o computador NÃO tem o Node.js instalado:
+
+  a) Acesse: https://nodejs.org
+  b) Clique no botão verde "LTS" (versão recomendada)
+  c) Execute o instalador e siga as instruções
+  d) Quando perguntado, marque a opção:
+     "Automatically install the necessary tools"
+  e) Reinicie o computador após instalar
+
+  Se já tem Node.js, pule para o Passo 3.
+
+
+  PASSO 3 - Rodar o instalador
+  ─────────────────────────────
+  a) Abra esta pasta no Explorador de Arquivos
+  b) Dê DUPLO-CLIQUE em "instalar.bat"
+  c) Se aparecer "Windows protegeu seu PC":
+     → Clique em "Mais informações"
+     → Clique em "Executar assim mesmo"
+  d) Aguarde o instalador terminar
+  e) Um atalho será criado na sua Área de Trabalho!
+
+
+  PASSO 4 - Usar o aplicativo
+  ────────────────────────────
+  Para abrir o app, use UMA dessas opções:
+  
+  • Duplo-clique no atalho "Pulse Tribe Pro" na
+    Área de Trabalho
+
+  • OU duplo-clique em "iniciar.bat" dentro desta pasta
+
+  O navegador abrirá automaticamente em:
+  http://localhost:8080
+
+  Para FECHAR o app, pressione qualquer tecla na
+  janela preta do CMD.
+
+
+═══════════════════════════════════════════════════════════
+  RESOLUÇÃO DE PROBLEMAS
+═══════════════════════════════════════════════════════════
+
+  Problema: "Node.js não encontrado"
+  Solução:  Instale o Node.js (Passo 2) e rode
+            o instalar.bat novamente.
+
+  Problema: "A porta 8080 está em uso"
+  Solução:  Feche outros programas que usem essa
+            porta, ou edite o "iniciar.bat" e troque
+            8080 por outro número (ex: 3000).
+
+  Problema: Sensores ANT+ não conectam
+  Solução:  Verifique se o dongle ANT+ USB está
+            plugado antes de iniciar o app.
+
+  Problema: Tela branca no navegador
+  Solução:  Aguarde alguns segundos. Se persistir,
+            pressione F5 para recarregar.
+
+  Problema: O Windows bloqueou o script
+  Solução:  Clique em "Mais informações" e depois
+            em "Executar assim mesmo".
+
+
+═══════════════════════════════════════════════════════════
+  INFORMAÇÕES TÉCNICAS
+═══════════════════════════════════════════════════════════
+
+  • O app roda localmente no seu computador
+  • Os dados são armazenados na nuvem (Supabase)
+  • Precisa de internet para funcionar
+  • Funciona em qualquer navegador moderno
+    (Chrome, Edge, Firefox)
+  • Node.js é necessário apenas como servidor local
+
+═══════════════════════════════════════════════════════════

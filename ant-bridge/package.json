@@ -1,0 +1,13 @@
+{
+    "name": "pulse-ant-bridge",
+    "version": "1.0.0",
+    "description": "Bridge between ANT+ USB stick and PulseMonitor Web App",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "ant-plus-next": "^0.4.0",
+        "ws": "^8.16.0"
+    }
+}
