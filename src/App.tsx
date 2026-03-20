@@ -1,12 +1,7 @@
-// Restore stable version
-//
 import { Suspense, lazy } from "react";
-// Last sync: 2026-03-14 08:25
 import { Toaster } from "@/components/ui/sonner";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// Redeploy trigger: sync with updated supabase project weeybrbfngobxutyywts
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "@/components/AppLayout";
 import StudentPortalLayout from "@/components/StudentPortalLayout";
@@ -49,7 +44,6 @@ function AppContent() {
   useClassEngine(); // Global class engine — keeps timers alive across all routes
   useRealtimeStudents(); // Supabase Realtime — syncs student totals across all devices
   useRealtimeClassHistory(); // Supabase Realtime — syncs class sessions & participants in real time
-  console.log("AppContent: render", { loading, error });
 
   if (loading) {
     return (
@@ -125,14 +119,8 @@ function PublicRoute({ children }: { children: React.ReactNode }) {
   const isAcademyAuthenticated = !!localStorage.getItem("academy_auth");
   const isStudentAuthenticated = !!localStorage.getItem("student_auth");
 
-  if (isAcademyAuthenticated) {
-    window.location.href = "/";
-    return null;
-  }
-  if (isStudentAuthenticated) {
-    window.location.href = "/student/dashboard";
-    return null;
-  }
+  if (isAcademyAuthenticated) return <Navigate to="/" replace />;
+  if (isStudentAuthenticated) return <Navigate to="/student/dashboard" replace />;
   return <>{children}</>;
 }
 
@@ -152,7 +140,6 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
       <BrowserRouter>
         <AppContent />
       </BrowserRouter>
@@ -161,4 +148,3 @@ const App = () => (
 );
 
 export default App;
-
